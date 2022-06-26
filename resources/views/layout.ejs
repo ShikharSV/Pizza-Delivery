@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Pizza App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pontano+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <nav class="px-2 sm:px-4 py-2.5 bg-slate-900">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a class="flex items-center" href="/">
+                <img class="w-24" src="/img/logo2.png" alt="logo">
+                <!-- <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Pizzalicious</span> -->
+                <img class="w-36" src="/img/Pizzalicious.png" alt="">
+            </a>
+            <div>
+                <ul class="flex items-center text-white">
+                    <li class="ml-10"><a class="pb-1 text-lg py-2 px-1" href="/">Menu</a></li>
+                    <li class="ml-10"><a class="pb-1 text-lg py-2 px-1" href="/customer/orders">Orders</a></li>
+                    <%if(user) {%>
+                        <li class="ml-10">
+                            <form id="logout" action="/logout" method="POST">
+                                <a class="cursor-pointer py-2 px-1 text-lg pb-1" onclick="document.getElementById('logout').submit()">Logout</a>
+                            </form>
+                        </li>
+                    <% } else { %>
+                    <li class="ml-10"><a class="pb-1 text-lg py-2 px-1" href="/register">Register</a></li>
+                    <li class="ml-10"><a class="pb-1 text-lg py-2 px-1" href="/login">Login</a></li>
+                    <%}%>
+                    <li class="ml-10 rounded-xl"><a href="/cart" class="inline-block flex rounded-xl items-center justify-between px-2 py-1">
+                        <span id="cartCounter" class="text-white rounded-xl font-bold pr-2"><%=session.cart? session.cart.totalQty : ''%></span>
+                        <img class="w-7 rounded-xl" src="/img/cart-white.png" alt="cart"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <%- body %>
+    <script src="/js/app.js"></script>
+</body>
+</html>
+
+
+
+  

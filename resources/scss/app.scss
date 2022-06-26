@@ -1,0 +1,111 @@
+@import './variables';
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss'; 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap');
+
+body{
+    font-family: 'Lato','sans-serif';
+    -webkit-font-smoothing: antialiased;
+    color: $dark;
+}
+
+
+nav li:last-child a{
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #0f172a;
+    &:hover{
+        border: 2px solid rgb(114, 114, 114);
+    }
+}
+
+
+nav li a{
+    font-family: 'Comfortaa', cursive;
+    transition: $smooth;
+    &:hover{
+        color: #e7e7e7;
+        border-bottom: 2px solid #adadad;
+    }
+}
+
+section.hero{
+    background: $secondary;
+}
+
+section.hero-1{
+    background:linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.71)), url('https://img.freepik.com/free-photo/top-view-pepperoni-pizza-with-mushroom-sausages-bell-pepper-olive-corn-black-wooden_141793-2158.jpg?w=2000') top;
+}
+
+
+.size{
+    background: $secondary;
+}
+.add-to-cart{
+    &:hover{
+        transition: $smooth;
+        background: #007fc9;
+        border-color: #0c4a6e;
+        color: $pure;
+    }
+    border: 2px solid #0c4a6e;
+    color: #0c4a6e;
+}
+.btn-primary{
+    &:hover{
+        transition: $smooth;
+        background-color: #ff7700 !important;
+    }
+    background-color: #f58d25 !important;
+}
+.btn-primary-2{
+    &:hover{
+        transition: $smooth-2;
+        background-color: #ff5900 !important;
+    }
+    border: 2px solid rgb(255, 111, 0);
+    background-color: transparent !important;
+}
+.btn-primary-3{
+    &:hover{
+        transition: $smooth-2;
+        color: white;
+        background-color: #001287 !important;
+    }
+    color: black;
+    border: 2px solid #003c78;
+    background-color: transparent !important;
+}
+
+section.cart{
+    background: white;
+    .amount{
+        color: $primary;
+    }
+}
+section.cart h1,h2,h6,button{
+    font-family: 'Comfortaa', cursive;
+}
+
+section.login{
+    .amount{
+        color: $primary;
+    }
+}
+section.register{
+    .amount{
+        color: $primary;
+    }
+}
+
+section.orders{
+    .amount{
+        color: $primary;
+    }
+} 
+.noty_theme_mint{
+    border-radius: 50px !important;
+    padding-left: 8px !important;
+}
+a.link{
+    color: $primary;
+}
